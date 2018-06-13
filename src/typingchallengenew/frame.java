@@ -4,16 +4,13 @@ package typingchallengenew;
 import javax.swing.*;
 import javax.swing.JFrame;
 import javax.swing.JTextPane;
-
 import javax.swing.text.*;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.logging.Level;
