@@ -39,7 +39,7 @@ public class frame extends JFrame {
     
     
     public frame() throws BadLocationException {
-        //creates the random passage to be copied (as string and as array list)
+        //creates the random passage to be copied by user (as string and as array list)
         chosenPassage = tp.returnRandomPassageAsString();
         chosenPassageAryList = als.returnAryListFromString(chosenPassage);
 
