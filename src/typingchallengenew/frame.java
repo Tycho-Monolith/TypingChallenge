@@ -43,16 +43,16 @@ public class frame extends JFrame {
         chosenPassage = tp.returnRandomPassageAsString();
         chosenPassageAryList = als.returnAryListFromString(chosenPassage);
 
-        initDoc();      //anywhere
-        initTextPane(); //first
-        initFrame();    //second
-        initTextArea(); //after frame
-        initLabel();    //after frame
+        initDoc();
+        initTextPane();
+        initFrame();
+        initTextArea();
+        initLabel();
     }
     
     
     final void initLabel() {
-        //settings for intro
+        //specs for intro
         intro = new JLabel("Type the passage below. The timer will start when you begin typing.");  
         intro.setBounds(50, 10, 400, 30);
         pane.add(intro);
@@ -61,6 +61,7 @@ public class frame extends JFrame {
     
     
     final void initTextPane() {
+        //specs for textPane
         pane = new JTextPane (doc);
         pane.setFocusable(false); 
         pane.setBackground(Color.lightGray);
@@ -69,7 +70,7 @@ public class frame extends JFrame {
     
     
     final void initFrame() {
-        //settings for frame
+        //specs for frame
         f = new JFrame("Tom's Typing Challenge");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.getContentPane().add(pane, BorderLayout.CENTER);
@@ -78,7 +79,7 @@ public class frame extends JFrame {
     }
     
     final void initDoc() throws BadLocationException {
-        //settings for doc
+        //specs for doc
         SimpleAttributeSet position = new SimpleAttributeSet();
         StyleConstants.setLeftIndent(position, 50);
         StyleConstants.setRightIndent(position, 30);
@@ -98,6 +99,7 @@ public class frame extends JFrame {
         
         results = new JTextArea();
         
+        //boolean that changes to true if the user has started typing
         hasUserStarted = false;
         
         userInput.addKeyListener(new KeyListener() {  
@@ -134,7 +136,7 @@ public class frame extends JFrame {
                 }
                 
                 //makes an arrayList from the current user input
-                userAryList = new ArrayList(Arrays.asList(currentUserInput.split(" ")));
+                userAryList = als.returnAryListFromString(currentUserInput);
                 
                 //the final index of the userAryList (i.e. the final word in the userInput box)
                 int finalIndex = userAryList.size() - 1;
@@ -175,7 +177,7 @@ public class frame extends JFrame {
             }
         });
         
-        //settings for userInput
+        //specs for userInput
         userInput.setBounds(50, 120, 380, 50);
         userInput.setEditable(true);
         userInput.setLineWrap(true);
@@ -184,7 +186,7 @@ public class frame extends JFrame {
         userInput.setWrapStyleWord(true);
         pane.add(userInput);
         
-        //settings for results
+        //specs for results
         results.setBounds(50, 190, 100, 40);
         results.setBackground(Color.LIGHT_GRAY);
         pane.add(results);
